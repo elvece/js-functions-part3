@@ -16,7 +16,7 @@ function test(str) {
 console.log(test("ing"))
 ```
 
-## Problems
+### Problems
 
 1. Define a function called `getStudentName` that takes a single object as an argument and returns the value of the `name` property/key.
 
