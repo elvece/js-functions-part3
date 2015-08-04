@@ -33,13 +33,15 @@ var letterArray = ['a', 'b', 'c', 'd', 'e'];
 
 function getNegativeIndex(arr, index){
   //starts at first item in array and goes back the number of index argument
-
+  var getValue = arr.indexOf(index);
+  arr.indexOf(getValue, index);
 
 }
 console.log(getNegativeIndex(letterArray, -3));
 
 //Problem 5: function that takes a string and a single character (string or integer) as arguments and returns the string with the characters removed
 function removeCharacter (str, charToRemove){
+  //work in progress
   str.replace( new RegExp(charToRemove.toString(), "gi" ), "" );
 
   return str;
@@ -51,10 +53,11 @@ console.log(removeCharacter('12345', '2'));
 //Problem 6: function that takes an object as an argument and returns each key-value pair in the following format: key is value
 var ages = {john: 10, jerry: 11, jenny: 12 };
 
-function outputObject(key, value){
-
-
-
+function outputObject(object){
+  var john = 'John is ' + ages.john + ', ';
+  var jerry = 'Jerry is ' + ages.jerry + ', ';
+  var jenny = 'Jenny is ' + ages.jenny;
+  return john + jerry + jenny;
 }
 console.log(outputObject(ages));
 
@@ -100,7 +103,13 @@ module.exports = {
   getStudentName: getStudentName,
   getTotalLetters: getTotalLetters,
   createObject: createObject,
-  getNegativeIndex: getNegativeIndex
+  // getNegativeIndex: getNegativeIndex,
+  // removeCharacter: removeCharacter,
+  outputObject: outputObject
+  // getVowels: getVowels,
+  // captureTwins: captureTwins,
+  // testBooleanLogic: testBooleanLogic,
+  // getUniqueValues: getUniqueValues
 };
 
 

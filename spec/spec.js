@@ -27,3 +27,24 @@ describe('module', function() {
     expect(code.getNegativeIndex(letterArray, -3)).toEqual('c');
   });
 });
+
+describe('module', function(){
+  it('returns a string with the noted characters removed', function(){
+    expect(code.removeCharacter('javascript', 'a').toEqual('jvscript'));
+    expect(code.removeCharacter('12345', '2').toEqual('1345'));
+  });
+});
+
+describe('module', function(){
+  it('takes an object and returns a key value pair in format: key is value', function(){
+    var ages = {john: 10, jerry: 11, jenny: 12 };
+    expect(code.outputObject(ages).toEqual('john is 10', 'jerry is 11', 'jenny is 12'));
+  });
+});
+
+describe('module', function(){
+  it('returns all the vowels in a string without duplicates', function(){
+    expect(code.getVowels('javascripting').toEqual(['a', 'i']));
+  });
+});
+
