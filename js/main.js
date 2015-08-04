@@ -23,7 +23,8 @@ console.log(getTotalLetters(stringArray));
 //Problem 3: function that takes two arguments and returns a new object with a key of the first argument and the value of the second argument
 function createObject(key, value){
   var obj = {};
-  obj[key] = value;//key in brackets because passing in a string, .key passes in the actual word key rather than using the argument
+  obj[key] = value;
+  //key in brackets because passing in a string, .key passes in the actual word key rather than using the argument
   return obj;
 }
 console.log(createObject('City', 'Boulder'));
@@ -32,10 +33,8 @@ console.log(createObject('City', 'Boulder'));
 var letterArray = ['a', 'b', 'c', 'd', 'e'];
 
 function getNegativeIndex(arr, index){
-  //starts at first item in array and goes back the number of index argument
-  var getValue = arr.indexOf(index);
-  arr.indexOf(getValue, index);
-
+  //c is index 2 normally, to get -3 to 2...add 5...which is length of array
+  return arr[index + arr.length];
 }
 console.log(getNegativeIndex(letterArray, -3));
 
@@ -103,13 +102,13 @@ module.exports = {
   getStudentName: getStudentName,
   getTotalLetters: getTotalLetters,
   createObject: createObject,
-  // getNegativeIndex: getNegativeIndex,
-  // removeCharacter: removeCharacter,
-  outputObject: outputObject
-  // getVowels: getVowels,
-  // captureTwins: captureTwins,
-  // testBooleanLogic: testBooleanLogic,
-  // getUniqueValues: getUniqueValues
+  getNegativeIndex: getNegativeIndex,
+  removeCharacter: removeCharacter,
+  outputObject: outputObject,
+  getVowels: getVowels,
+  captureTwins: captureTwins,
+  testBooleanLogic: testBooleanLogic,
+  getUniqueValues: getUniqueValues
 };
 
 
