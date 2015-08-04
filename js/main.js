@@ -38,11 +38,11 @@ function getNegativeIndex(arr, index){
 }
 console.log(getNegativeIndex(letterArray, -3));
 
-//Problem 5: fucntion that takes a string and a single character (string or integer) as arguments and returns the string with the characters removed
-function removeCharacter (str, char){
+//Problem 5: function that takes a string and a single character (string or integer) as arguments and returns the string with the characters removed
+function removeCharacter (str, charToRemove){
+  str.replace( new RegExp(charToRemove.toString(), "gi" ), "" );
 
-
-
+  return str;
 }
 console.log(removeCharacter('javascript', 'a'));
 console.log(removeCharacter('javascript', '1'));
@@ -93,3 +93,15 @@ function getUniqueValues (strArr){
 }
 console.log(getUniqueValues(['m', 'n', 'm', 'r', 'r', 's']));
 console.log(getUniqueValues(['michael', 'ben', 'kerry', 'ben']));
+
+
+//testing
+module.exports = {
+  getStudentName: getStudentName,
+  getTotalLetters: getTotalLetters,
+  createObject: createObject,
+  getNegativeIndex: getNegativeIndex
+};
+
+
+
