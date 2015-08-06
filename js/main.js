@@ -48,7 +48,11 @@ console.log(getNegativeIndex(letterArray, -3));
 
 //Problem 5: function that takes a string and a single character (string or integer) as arguments and returns the string with the characters removed
 function removeCharacter (str, char){
-  return str.replace(new RegExp(char, "gi" ), "" );
+  var newStr = str.split(char).join("");
+  return newStr;
+
+  // str.replace(new RegExp(char, "gi" ), "" );
+  // return str;
 }
 console.log(removeCharacter('javascript', 'a'));
 console.log(removeCharacter('javascript', '1'));
@@ -96,8 +100,6 @@ function testBooleanLogic (arr){
       return true;
     }
   }
-
-
 }
 console.log(testBooleanLogic([false, true, false, false]));
 console.log(testBooleanLogic([false, false, false]));
@@ -106,9 +108,14 @@ console.log(testBooleanLogic([false, false, false]));
 
 //Problem 10: function that takes an array of string and returns a new array consisting of the unique values
 function getUniqueValues (strArr){
-
-
-
+  //can also use _.uniq(strArr) but underscore not working with jasmine tests currently
+  var newArr = [];
+  for (var i = 0; i < strArr.length; i++) {
+    if (newArr.indexOf(strArr[i]) === -1 && strArr[i] !== '')
+      // setting the index to -1 means its not in the array
+      newArr.push(strArr[i]);
+  }
+  return newArr;
 }
 console.log(getUniqueValues(['m', 'n', 'm', 'r', 'r', 's']));
 console.log(getUniqueValues(['michael', 'ben', 'kerry', 'ben']));

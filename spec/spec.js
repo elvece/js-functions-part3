@@ -63,7 +63,7 @@ describe('#testBooleanLogic', function(){
 });
 
 //problem 10
-descrieb("#getUniqueValues", function(){
+describe("#getUniqueValues", function(){
   it('returns a new array of unique values', function(){
     expect(code.getUniqueValues(['m', 'n', 'm', 'r', 'r', 's'])).toEqual(['m', 'n', 'r', 's']);
     expect(code.getUniqueValues(['michael', 'ben', 'kerry', 'ben'])).toEqual(['michael', 'ben', 'kerry']);
