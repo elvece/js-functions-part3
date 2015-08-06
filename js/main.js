@@ -67,11 +67,10 @@ function outputObject(object){
 }
 console.log(outputObject(ages));
 
+//if indexOf() = -1,
 
-
-//Problem 7: function that takes a string as an argument and returns an array of all the vowels in the string, not includind duplicates.
+//Problem 7: function that takes a string as an argument and returns an array of all the vowels in the string, not including duplicates.
 function getVowels(str){
-
 
 
 }
@@ -92,7 +91,11 @@ console.log(captureTwins(['m', 'm', 'm', 'n', 's', 's']));
 
 //Problem 9: function that takes an array of boolean values and returns true if any value is true
 function testBooleanLogic (arr){
-
+  for (var i = 0; i < arr.length; i++) {
+    if(arr[i] === true){
+      return true;
+    }
+  }
 
 
 }
