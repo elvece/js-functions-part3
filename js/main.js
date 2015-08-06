@@ -62,7 +62,7 @@ console.log(removeCharacter('12345', '2'));
 
 //Problem 6: function that takes an object as an argument and returns each key-value pair in the following format: key is value
 var ages = {john: 10, jerry: 11, jenny: 12 };
-
+//refactor
 function outputObject(object){
   var john = 'John is ' + ages.john + ', ';
   var jerry = 'Jerry is ' + ages.jerry + ', ';
@@ -100,6 +100,7 @@ function testBooleanLogic (arr){
       return true;
     }
   }
+  return false;
 }
 console.log(testBooleanLogic([false, true, false, false]));
 console.log(testBooleanLogic([false, false, false]));

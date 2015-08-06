@@ -38,7 +38,7 @@ describe('#removeCharacter', function(){
 describe('#outputObject', function(){
   it('takes an object and returns a key value pair in format: key is value', function(){
     var ages = {john: 10, jerry: 11, jenny: 12 };
-    expect(code.outputObject(ages).toEqual('john is 10', 'jerry is 11', 'jenny is 12'));
+    expect(code.outputObject(ages).toEqual('john is 10, jerry is 11, jenny is 12'));
   });
 });
 //problem 7
