@@ -75,11 +75,17 @@ console.log(outputObject(ages));
 
 //Problem 7: function that takes a string as an argument and returns an array of all the vowels in the string, not including duplicates.
 function getVowels(str){
-
-
+  var arr = [];
+  var vowels = str.replace(/[^aeiou]/gi, "").split("");
+    for ( i = 0; i < vowels.length; i++ ) {
+      //if the index of the iterated value of vowels is less than 0, aka if it is -1, thus not in the array, then push it to the array
+      if (arr.indexOf(vowels[i]) < 0) {
+        arr.push(vowels[i]);
+    }
+    return arr;
 }
 console.log(getVowels('javascripting'));
-
+//push vowels to new array only if dont exist in array
 
 
 //Problem 8: function that takes an array as an argument and returns true if every adjacent pair of items in the array is the same, otherwise returns false
