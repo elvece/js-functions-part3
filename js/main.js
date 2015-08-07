@@ -1,3 +1,6 @@
+
+
+
 //Example
 function test(str) {
   return "test" + str;
@@ -81,22 +84,39 @@ function getVowels(str){
       //if the index of the iterated value of vowels is less than 0, aka if it is -1, thus not in the array, then push it to the array
       if (arr.indexOf(vowels[i]) < 0) {
         arr.push(vowels[i]);
+      }
     }
     return arr;
 }
 console.log(getVowels('javascripting'));
-//push vowels to new array only if dont exist in array
+
 
 
 //Problem 8: function that takes an array as an argument and returns true if every adjacent pair of items in the array is the same, otherwise returns false
 function captureTwins (arr){
-
-
-
+  var chunks = [];
+  var twin = [];
+  var booleanArr = [];
+  for (var i=0; i<arr.length; i+=2){
+    chunks.push(arr.slice(i,i+2));
+  }
+  for (var j = 0; j < chunks.length; j++) {
+    if (chunks[j][0] === chunks[j][1]){
+       booleanArr.push(true);
+    }
+    else{
+      booleanArr.push(false);
+    }
+  }
+  function isTrue(element, index, array){
+    return element === true;
+  }
+  return booleanArr.every(isTrue);
 }
+
 console.log(captureTwins(['m', 'm', 'n', 'n', 's', 's']));
 console.log(captureTwins(['m', 'm', 'm', 'n', 's', 's']));
-
+//_.pluck, or _.find
 
 
 //Problem 9: function that takes an array of boolean values and returns true if any value is true
@@ -116,13 +136,15 @@ console.log(testBooleanLogic([false, false, false]));
 //Problem 10: function that takes an array of string and returns a new array consisting of the unique values
 function getUniqueValues (strArr){
   //can also use _.uniq(strArr) but underscore not working with jasmine tests currently
-  var newArr = [];
-  for (var i = 0; i < strArr.length; i++) {
-    if (newArr.indexOf(strArr[i]) === -1 && strArr[i] !== '')
-      // setting the index to -1 means its not in the array
-      newArr.push(strArr[i]);
-  }
-  return newArr;
+  return _.uniq(strArr);
+
+  // var newArr = [];
+  // for (var i = 0; i < strArr.length; i++) {
+  //   if (newArr.indexOf(strArr[i]) === -1 && strArr[i] !== '')
+  //     // setting the index to -1 means its not in the array
+  //     newArr.push(strArr[i]);
+  // }
+  // return newArr;
 }
 console.log(getUniqueValues(['m', 'n', 'm', 'r', 'r', 's']));
 console.log(getUniqueValues(['michael', 'ben', 'kerry', 'ben']));

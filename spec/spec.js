@@ -1,4 +1,5 @@
 var code = require('../js/main.js');
+var _=require('underscore');
 
 //problem 1
 describe('#getStudentName', function() {
