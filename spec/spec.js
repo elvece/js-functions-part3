@@ -1,5 +1,5 @@
 var code = require('../js/main.js');
-var _=require('underscore');
+// var _=require('underscore');
 
 //problem 1
 describe('#getStudentName', function() {
@@ -29,32 +29,33 @@ describe('#getNegativeIndex', function() {
   });
 });
 //problem 5
-describe('#removeCharacter', function(){
+describe('#removeChar', function(){
   it('returns a string with the noted characters removed', function(){
-    expect(code.removeCharacter('javascript', 'a').toEqual('jvscript'));
-    expect(code.removeCharacter('12345', '2').toEqual('1345'));
+    expect(code.removeChar('javascript', 'a')).toEqual('jvscript');
+    expect(code.removeChar('12345', '2')).toEqual('1345');
   });
 });
 //problem 6
 describe('#outputObject', function(){
   it('takes an object and returns a key value pair in format: key is value', function(){
     var ages = {john: 10, jerry: 11, jenny: 12 };
-    expect(code.outputObject(ages).toEqual('john is 10, jerry is 11, jenny is 12'));
+    expect(code.outputObject(ages)).toEqual('john is 10, jerry is 11, jenny is 12');
   });
 });
 //problem 7
 describe('#getVowels', function(){
   it('returns all the vowels in a string without duplicates', function(){
-    expect(code.getVowels('javascripting').toEqual(['a', 'i']));
+    expect(code.getVowels('javascripting')).toEqual(['a', 'i']);
   });
 });
 //problem 8
 describe('#captureTwins', function(){
   it('returns true if every adjacent pair of items in the array is the same', function(){
-    expect(code.captureTwins("['m', 'm', 'n', 'n', 's', 's']").toEqual(true));
-    expect(code.captureTwins("['m', 'm', 'm', 'n', 's', 's']").toEqual(false));
+    expect(code.captureTwins(['m', 'm', 'n', 'n', 's', 's'])).toEqual(true);
+    expect(code.captureTwins(['m', 'm', 'm', 'n', 's', 's'])).toEqual(false);
   });
 });
+
 //problem 9
 describe('#testBooleanLogic', function(){
   it('returns true if any value in array is true',function(){

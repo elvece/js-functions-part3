@@ -1,5 +1,4 @@
-
-
+// var _=require('underscore');
 
 //Example
 function test(str) {
@@ -50,16 +49,16 @@ console.log(getNegativeIndex(letterArray, -3));
 
 
 //Problem 5: function that takes a string and a single character (string or integer) as arguments and returns the string with the characters removed
-function removeCharacter (str, char){
+function removeChar (str, char){
   var newStr = str.split(char).join("");
   return newStr;
 
   // str.replace(new RegExp(char, "gi" ), "" );
   // return str;
 }
-console.log(removeCharacter('javascript', 'a'));
-console.log(removeCharacter('javascript', '1'));
-console.log(removeCharacter('12345', '2'));
+console.log(removeChar('javascript', 'a'));
+console.log(removeChar('javascript', '1'));
+console.log(removeChar('12345', '2'));
 
 
 
@@ -67,10 +66,11 @@ console.log(removeCharacter('12345', '2'));
 var ages = {john: 10, jerry: 11, jenny: 12 };
 //refactor
 function outputObject(object){
-  var john = 'John is ' + ages.john + ', ';
-  var jerry = 'Jerry is ' + ages.jerry + ', ';
-  var jenny = 'Jenny is ' + ages.jenny;
-  return john + jerry + jenny;
+  var arr = [];
+  for (var key in object){
+    arr.push(key + ' is ' + ages[key]);
+  }
+  return arr.join(", ");
 }
 console.log(outputObject(ages));
 
@@ -136,15 +136,15 @@ console.log(testBooleanLogic([false, false, false]));
 //Problem 10: function that takes an array of string and returns a new array consisting of the unique values
 function getUniqueValues (strArr){
   //can also use _.uniq(strArr) but underscore not working with jasmine tests currently
-  return _.uniq(strArr);
+  // return _.uniq(strArr);
 
-  // var newArr = [];
-  // for (var i = 0; i < strArr.length; i++) {
-  //   if (newArr.indexOf(strArr[i]) === -1 && strArr[i] !== '')
-  //     // setting the index to -1 means its not in the array
-  //     newArr.push(strArr[i]);
-  // }
-  // return newArr;
+  var newArr = [];
+  for (var i = 0; i < strArr.length; i++) {
+    if (newArr.indexOf(strArr[i]) === -1 && strArr[i] !== '')
+      // setting the index to -1 means its not in the array
+      newArr.push(strArr[i]);
+  }
+  return newArr;
 }
 console.log(getUniqueValues(['m', 'n', 'm', 'r', 'r', 's']));
 console.log(getUniqueValues(['michael', 'ben', 'kerry', 'ben']));
@@ -157,7 +157,7 @@ module.exports = {
   getTotalLetters: getTotalLetters,
   createObject: createObject,
   getNegativeIndex: getNegativeIndex,
-  removeCharacter: removeCharacter,
+  removeChar: removeChar,
   outputObject: outputObject,
   getVowels: getVowels,
   captureTwins: captureTwins,
